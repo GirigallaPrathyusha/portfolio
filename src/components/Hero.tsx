@@ -5,7 +5,7 @@ import AnimatedImage from './AnimatedImage';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
-  const fullText = "Full Stack Developer";
+  const fullText = "APP DEVELOPER";
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -26,16 +26,23 @@ const Hero = () => {
       <div className="container mx-auto px-6 z-10 animate-fade-in">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
           <div className="md:w-1/2 text-left md:order-1 order-2">
-            <p className="text-portfolio-primary mb-4 tracking-wider">HELLO THERE, I'M</p>
+            <p className="text-portfolio-primary mb-4 tracking-wider flex items-center gap-2">
+              <span className="text-2xl">👋</span> Hello it's Me
+            </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-portfolio-heading">
-              Hitesh Moola
+              Kammari Anand
             </h1>
             <div className="h-8 mb-8">
               <h2 className="text-xl md:text-2xl lg:text-3xl text-portfolio-heading font-light inline-block">
-                {displayText}
+                And I'm a <span className="text-portfolio-primary">{displayText}</span>
                 <span className="border-r-2 border-portfolio-primary ml-1 animate-blink"></span>
               </h2>
             </div>
+            
+            <p className="text-portfolio-text mb-12">
+              passionate about building interactive web applications 
+              and exploring new technologies
+            </p>
             
             <div className="flex space-x-6 mb-12">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-portfolio-heading hover:text-portfolio-primary transition-colors">
