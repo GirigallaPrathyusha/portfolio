@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Box, CircleNotch, Code, Flame, Layers, Rocket } from 'lucide-react';
+import { Box, CircleDot, Code, Flame, Layers, Rocket } from 'lucide-react';
 
 const AnimatedImage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -40,7 +40,7 @@ const AnimatedImage = () => {
         <Rocket size={24} />
       </div>
       <div className="floating-icon absolute text-portfolio-primary animate-floating-2">
-        <CircleNotch size={20} />
+        <CircleDot size={20} />
       </div>
       <div className="floating-icon absolute text-portfolio-primary animate-floating-1">
         <Layers size={22} />
