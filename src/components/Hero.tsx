@@ -5,19 +5,44 @@ import AnimatedImage from './AnimatedImage';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
-  const fullText = "APP DEVELOPER";
+  const [profession, setProfession] = useState('APP DEVELOPER');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
 
+  // Handle typing animation
   useEffect(() => {
-    if (currentIndex < fullText.length) {
+    if (isTyping && currentIndex < profession.length) {
       const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + fullText[currentIndex]);
+        setDisplayText(prev => prev + profession[currentIndex]);
         setCurrentIndex(prev => prev + 1);
       }, 100);
       
       return () => clearTimeout(timeout);
+    } else if (currentIndex >= profession.length) {
+      // When finished typing, wait 2 seconds before erasing
+      const timeout = setTimeout(() => {
+        setIsTyping(false);
+      }, 2000);
+      
+      return () => clearTimeout(timeout);
     }
-  }, [currentIndex]);
+  }, [currentIndex, profession, isTyping]);
+
+  // Handle erasing animation
+  useEffect(() => {
+    if (!isTyping && displayText.length > 0) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prev => prev.slice(0, -1));
+      }, 50);
+      
+      return () => clearTimeout(timeout);
+    } else if (!isTyping && displayText.length === 0) {
+      // When finished erasing, switch profession and start typing again
+      setProfession(prev => prev === 'APP DEVELOPER' ? 'WEB DEVELOPER' : 'APP DEVELOPER');
+      setCurrentIndex(0);
+      setIsTyping(true);
+    }
+  }, [displayText, isTyping]);
 
   return (
     <section id="home" className="relative h-screen flex flex-col justify-center items-center text-center">
