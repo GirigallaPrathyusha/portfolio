@@ -101,6 +101,25 @@ export default {
 				blink: {
 					'0%, 100%': { borderColor: 'transparent' },
 					'50%': { borderColor: 'white' }
+				},
+				'floating-1': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg)' },
+					'20%': { transform: 'translate(20px, 20px) rotate(30deg)' },
+					'40%': { transform: 'translate(-15px, 40px) rotate(90deg)' },
+					'60%': { transform: 'translate(-30px, 10px) rotate(120deg)' },
+					'80%': { transform: 'translate(15px, -20px) rotate(210deg)' },
+					'100%': { transform: 'translate(0, 0) rotate(360deg)' }
+				},
+				'floating-2': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg)' },
+					'25%': { transform: 'translate(30px, -20px) rotate(90deg)' },
+					'50%': { transform: 'translate(10px, 30px) rotate(180deg)' },
+					'75%': { transform: 'translate(-20px, -15px) rotate(270deg)' },
+					'100%': { transform: 'translate(0, 0) rotate(360deg)' }
+				},
+				pulse: {
+					'0%, 100%': { opacity: '1', transform: 'scale(1)' },
+					'50%': { opacity: '0.8', transform: 'scale(0.98)' }
 				}
 			},
 			animation: {
@@ -108,7 +127,10 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'fade-in-up': 'fade-in-up 0.5s ease-out',
-				typing: 'typing 3.5s steps(40, end), blink 0.75s step-end infinite'
+				typing: 'typing 3.5s steps(40, end), blink 0.75s step-end infinite',
+				'floating-1': 'floating-1 15s infinite ease-in-out',
+				'floating-2': 'floating-2 18s infinite ease-in-out',
+				'pulse': 'pulse 4s infinite ease-in-out'
 			}
 		}
 	},
