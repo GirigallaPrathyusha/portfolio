@@ -5,47 +5,38 @@ const experienceData = [
   {
     id: 1,
     type: "work",
-    title: "Senior Frontend Developer",
-    company: "TechCorp Inc.",
-    location: "San Francisco, CA",
-    date: "2021 - Present",
-    description: "Led development of multiple web applications using React, TypeScript, and Next.js. Improved performance metrics by 40% through code optimizations. Mentored junior developers and implemented best practices."
+    title: "Software Development Engineer",
+    company: "BlueStock",
+    location: "India",
+    date: "2024 DEC -2025 JAN",
+    description: "Creating a stock prices display website similar to screener.in using PHP for backend development. Building comprehensive stock market data visualization and company information platform."
   },
   {
     id: 2,
-    type: "work",
-    title: "Full Stack Developer",
-    company: "WebSolutions",
-    location: "New York, NY",
-    date: "2018 - 2021",
-    description: "Developed and maintained RESTful APIs using Node.js and Express. Created responsive and accessible user interfaces with React. Collaborated with design team to implement UI/UX improvements."
+    type: "education",
+    title: "B.Tech in Data Science",
+    company: "B.V RAJU INSTITUTE OF TECHNOLOGY",
+    location: "India",
+    date: "2023 - 2026",
+    description: "Currently pursuing B.Tech in Data Science, focusing on advanced data analysis, android development, and software development."
   },
   {
     id: 3,
-    type: "work",
-    title: "Junior Developer",
-    company: "Digital Creatives",
-    location: "Boston, MA",
-    date: "2016 - 2018",
-    description: "Assisted in developing web applications using JavaScript and jQuery. Implemented responsive designs using HTML5 and CSS3. Participated in code reviews and team meetings."
+    type: "education",
+    title: "Diploma in Computer Science Engineering",
+    company: "MAHAVEER INSTITUTE OF SCIENCE & TECHNOLOGY",
+    location: "India",
+    date: "2020 - 2023",
+    description: "Completed diploma in Computer Science Engineering, gaining strong foundation in programming and software development."
   },
   {
     id: 4,
     type: "education",
-    title: "M.S. in Computer Science",
-    company: "Stanford University",
-    location: "Stanford, CA",
-    date: "2014 - 2016",
-    description: "Focused on web technologies and machine learning. Completed thesis on optimizing frontend performance in modern web applications."
-  },
-  {
-    id: 5,
-    type: "education",
-    title: "B.S. in Computer Science",
-    company: "MIT",
-    location: "Cambridge, MA",
-    date: "2010 - 2014",
-    description: "Graduated with honors. Completed coursework in algorithms, data structures, and web development."
+    title: "High School",
+    company: "ZPHS MADHURAPUR",
+    location: "India",
+    date: "2020",
+    description: "Completed high school education with 100% academic performance, demonstrating excellence in studies and strong foundation for higher education."
   }
 ];
 

@@ -18,35 +18,54 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       // Set navbar background when scrolled
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
 
       // Determine active section based on scroll position
       const sections = document.querySelectorAll('section[id]');
+      let currentSection = '';
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
       
       sections.forEach(section => {
-        const sectionTop = (section as HTMLElement).offsetTop - 100;
+        const sectionTop = (section as HTMLElement).offsetTop;
         const sectionHeight = (section as HTMLElement).offsetHeight;
         const sectionId = section.getAttribute('id') || '';
         
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-          setActiveSection(sectionId);
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          currentSection = sectionId;
         }
       });
+
+      if (currentSection !== '') {
+        setActiveSection(currentSection);
+      }
+    };
+
+    const handleNavClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+        e.preventDefault();
+        const id = target.getAttribute('href')?.substring(1);
+        const element = document.getElementById(id || '');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('click', handleNavClick);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleNavClick);
+    };
   }, []);
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-portfolio-dark/95 backdrop-blur-sm py-3 shadow-md' : 'py-5'}`}>
       <nav className="container mx-auto px-6 flex justify-between items-center">
         <a href="#home" className="text-2xl font-bold text-portfolio-heading">
-          Moola<span className="text-portfolio-primary">.</span>
+          KAMMARI<span className="text-portfolio-primary">.</span>
         </a>
 
         {/* Desktop Navigation */}

@@ -1,77 +1,58 @@
 
-import { Code, Database, Layout, Smartphone } from 'lucide-react';
+import React from 'react';
 
-const skills = [
-  "JavaScript", "TypeScript", "React", "Node.js", "Express", "MongoDB", 
-  "SQL", "HTML", "CSS", "Tailwind CSS", "Git", "Docker", "AWS"
-];
-
-const About = () => {
+const AboutSection = () => {
   return (
-    <section id="about" className="section-padding py-24 bg-portfolio-dark">
-      <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-          <div className="w-20 h-1 bg-portfolio-primary mx-auto"></div>
+    <section id="about" className="py-16 bg-portfolio-dark">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12 appear-animated">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 font-montserrat">
+            About <span className="text-[#54F4F4]">Me</span>
+          </h2>
+          <div className="h-1 w-20 bg-portfolio-accent mx-auto mb-6"></div>
+          <p className="max-w-2xl mx-auto text-lg text-gray-300">
+            ✨ Crafting seamless digital journeys through code and design ✨
+          </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1">
-            <h3 className="text-2xl font-bold mb-4 text-portfolio-heading">Who am I?</h3>
-            <p className="mb-6 leading-relaxed">
-              I'm a passionate Full Stack Developer with expertise in building responsive and performant web applications. 
-              With a strong foundation in both frontend and backend technologies, I create seamless user experiences that solve real-world problems.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="flex flex-col justify-center appear-animated appear-animated-delay-1">
+            <h3 className="text-2xl font-bold mb-4 font-montserrat">
+              <span className="bg-gradient-to-r from-[#4EDBE0] to-[#B945EE] text-transparent bg-clip-text">Hello</span>, I'm <span className="text-gradient">Anand</span>
+            </h3>
+            <p className="mb-4 text-white-700 dark:text-gray-300">
+              I'm a Data Science student with a keen interest in Programming, Web & App Development. 
+              I'm seeking an innovative and challenging environment where I can apply my skills effectively, 
+              grow with evolving technologies, and turn challenges into opportunities while contributing to 
+              meaningful success.
             </p>
-            <p className="mb-6 leading-relaxed">
-              My journey in software development began over 5 years ago, and I've been continuously learning and adapting to the ever-changing tech landscape.
-              I'm dedicated to writing clean, maintainable code and implementing best practices in all my projects.
+            <p className="mb-6 text-white-700 dark:text-gray-300">
+              I believe in writing clean, maintainable code and creating intuitive user experiences.
+              My approach combines technical expertise with creative problem-solving to deliver
+              solutions that exceed expectations.
             </p>
-            
-            <h3 className="text-2xl font-bold mb-4 mt-10 text-portfolio-heading">My Skills</h3>
-            <div className="flex flex-wrap gap-2 mb-8">
-              {skills.map((skill) => (
-                <span key={skill} className="skill-tag">
-                  {skill}
-                </span>
-              ))}
-            </div>
           </div>
           
-          <div className="order-1 md:order-2">
-            <div className="bg-secondary p-8 rounded-xl">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-portfolio-dark p-6 rounded-lg flex flex-col items-center text-center">
-                  <div className="w-14 h-14 bg-portfolio-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Layout className="text-portfolio-primary" size={24} />
-                  </div>
-                  <h4 className="font-bold mb-2">Frontend</h4>
-                  <p className="text-sm">Creating beautiful, responsive user interfaces with modern frameworks.</p>
-                </div>
-                
-                <div className="bg-portfolio-dark p-6 rounded-lg flex flex-col items-center text-center">
-                  <div className="w-14 h-14 bg-portfolio-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Database className="text-portfolio-primary" size={24} />
-                  </div>
-                  <h4 className="font-bold mb-2">Backend</h4>
-                  <p className="text-sm">Building robust APIs and server-side applications with Node.js.</p>
-                </div>
-                
-                <div className="bg-portfolio-dark p-6 rounded-lg flex flex-col items-center text-center">
-                  <div className="w-14 h-14 bg-portfolio-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Code className="text-portfolio-primary" size={24} />
-                  </div>
-                  <h4 className="font-bold mb-2">Development</h4>
-                  <p className="text-sm">Writing clean, tested, and maintainable code following best practices.</p>
-                </div>
-                
-                <div className="bg-portfolio-dark p-6 rounded-lg flex flex-col items-center text-center">
-                  <div className="w-14 h-14 bg-portfolio-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Smartphone className="text-portfolio-primary" size={24} />
-                  </div>
-                  <h4 className="font-bold mb-2">Responsive</h4>
-                  <p className="text-sm">Creating applications that work seamlessly across all devices.</p>
-                </div>
-              </div>
+          <div className="appear-animated appear-animated-delay-2 flex justify-center items-center">
+            <div 
+              className="rounded-full overflow-hidden w-[300px] h-[300px] border-4 border-portfolio-primary shadow-xl 
+                transform hover:scale-110 hover:rotate-3 hover:border-[#54F4F4] 
+                active:scale-95 cursor-pointer transition-all duration-300 
+                hover:shadow-[0_0_30px_rgba(84,244,244,0.3)]"
+              onClick={() => {
+                const img = document.querySelector('#profile-img') as HTMLImageElement;
+                if (img) {
+                  img.classList.add('animate-pulse');
+                  setTimeout(() => img.classList.remove('animate-pulse'), 1000);
+                }
+              }}
+            >
+              <img 
+                id="profile-img"
+                src="https://res.cloudinary.com/djx87wmbz/image/upload/v1744575823/kanna_dmqrll.jpg" 
+                alt="KAMMARI ANAND" 
+                className="w-full h-full object-cover transition-transform duration-500"
+              />
             </div>
           </div>
         </div>
@@ -80,4 +61,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutSection;
