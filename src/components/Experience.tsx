@@ -93,7 +93,7 @@ const Experience = () => {
         
         <AnimatedContent>
           <div className="text-center mt-16">
-            <a href="https://docs.google.com/document/d/1aiOTnTiOVcBfq2CBAuY1-v1lPVYq5os0gi96G5wC6lw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer" className="button-outline">
+            <a href="https://drive.google.com/file/d/163ag-ZrUSWXLXA8-jdiiRNluYHa8zv4w/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="button-outline">
               Download Resume
             </a>
           </div>
