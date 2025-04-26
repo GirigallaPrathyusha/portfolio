@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: =
+
 
 ## How can I edit this code?
 
