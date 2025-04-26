@@ -17,53 +17,42 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: 'Hotel Management',
-      description: 'A dynamic food delivery website featuring diverse cuisines, gift cards and secure payments and a "why choose us" section delivering convenience, taste, and happiness to your doorstep.',
-      image: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3',
-      tags: ['HTML', 'CSS', 'JavaScript'],
+      title: 'Hostel Management',
+      description: ' A web application to automate hostel room allocation, leave requests, visitor management, and student accommodation permissions, improving efficiency and transparency.',
+      image: 'https://res.cloudinary.com/dlled6nof/image/upload/v1745658745/images_1_udps4z.jpg',
+      tags: ['HTML', 'CSS', 'JavaScript','PHP'],
       category: 'Web Development',
       icon: <Globe size={20} className="mr-2" />
     },
     {
-      title: 'House Prediction',
-      description: 'A machine learning project predicting house prices using square footage, location, and key features providing accurate data-driven insights to simplify real estate decisions effortlessly.',
-      image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3',
-      tags: ['Python', 'Machine Learning'],
-      category: 'Web Development',
+      title: 'Hand Written Digit Recognition',
+      description: ' a model to identify and classify handwritten digits with high accuracy using Convalutional Neural Networks.',
+      image: 'https://res.cloudinary.com/dlled6nof/image/upload/v1745658711/images_eac9mq.jpg',
+      tags: ['python','CNN' ],
+      category: 'Web development',
       icon: <Globe size={20} className="mr-2" />
     },
     {
-      title: 'Stock Price Prediction',
-      description: 'A stock price prediction project leveraging APIs to analyze market trends, historical data and patterns providing real-time data-driven forecasts for smarter investment decisions.',
-      image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3',
-      tags: ['Python', 'API Integration', 'Machine Learning'],
-      category: 'API Integration',
-      icon: <Code size={20} className="mr-2" />
+      title: 'Slum Chatbot',
+      description: ' SlumCare Chatbot is a mobile-friendly chatbot that lets slum residents report daily life issues and get quick help by connecting them to the right authorities.',
+      image: 'https://res.cloudinary.com/dlled6nof/image/upload/v1745659210/th_zx5zit.jpg',
+      tags: ['Google AI Studio','Javascript' ],
+      category: 'AI Agent',
+      icon: <Globe size={20} className="mr-2" />
     },
-    {
-      title: 'Skills Share',
-      description: 'A versatile mobile application with features like notifications, chatbots and interactive interface showcasing multiple apps built to enhance user engagement and seamless experiences.',
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3',
-      tags: ['React', 'React Native', 'Expo', 'JavaScript'],
-      category: 'App Development',
-      icon: <Code size={20} className="mr-2" />
-    }
   ];
 
   const skills = [
     { name: 'HTML', icon: 'https://cdn-icons-png.flaticon.com/512/732/732212.png' },
     { name: 'CSS', icon: 'https://cdn-icons-png.flaticon.com/512/732/732190.png' },
     { name: 'JavaScript', icon: 'https://cdn-icons-png.flaticon.com/512/5968/5968292.png' },
-    { name: 'Bootstrap', icon: 'https://cdn-icons-png.flaticon.com/512/5968/5968672.png' },
     { name: 'React', icon: 'https://cdn-icons-png.flaticon.com/512/1126/1126012.png' },
     { name: 'Python', icon: 'https://cdn-icons-png.flaticon.com/512/5968/5968350.png' },
     { name: 'GitHub', icon: 'https://cdn-icons-png.flaticon.com/512/733/733553.png' },
     { name: 'Git', icon: 'https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png' },
     { name: 'Java', icon: 'https://cdn-icons-png.flaticon.com/512/5968/5968282.png' },
-    { name: 'MongoDB', icon: 'https://cdn.iconscout.com/icon/free/png-256/free-mongodb-5-1175140.png' },
     { name: 'Supabase', icon: 'https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png' },
     { name: 'Figma', icon: 'https://cdn.iconscout.com/icon/free/png-256/free-figma-3628771-3030133.png' },
-    { name: 'Firebase', icon: 'https://cdn.iconscout.com/icon/free/png-256/free-firebase-3521427-2944871.png' }
   ];
 
   const duplicatedSkills = [...skills, ...skills];

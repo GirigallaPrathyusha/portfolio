@@ -19,7 +19,7 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    console.log('Form submitted to: kammarianand20@gmail.com', formData);
+    console.log('Form submitted to: prathyushagoudgirigalla@gmail.com', formData);
 
     setTimeout(() => {
       setIsSubmitting(false);
@@ -136,7 +136,7 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-semibold">Email</h4>
-                    <p className="text-gray-600 dark:text-gray-400">kammarianand20@gmail.com</p>
+                    <p className="text-gray-600 dark:text-gray-400">prathyushagoudgirigalla@gmail.com</p>
                     <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">I'll respond within 24 hours</p>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ const ContactSection = () => {
                 <h3 className="text-lg font-semibold mb-4">Connect With Me</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <a
-                    href="https://www.instagram.com/mr.silent_killer_0"
+                    href="https://www.instagram.com/__prathyusha_goud_ppp__"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center bg-portfolio-muted dark:bg-slate-800 hover:bg-portfolio-primary hover:text-white p-3 rounded-lg transition-all duration-300"
@@ -178,12 +178,12 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="font-medium">Instagram</p>
-                      <p className="text-xs text-gray-500">@mr.silent_killer_0</p>
+                      <p className="text-xs text-gray-500">__prathyusha_goud_ppp__</p>
                     </div>
                   </a>
 
                   <a
-                    href="https://www.linkedin.com/in/kammarianand"
+                    href="https://www.linkedin.com/in/girigalla-prathyusha/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center bg-portfolio-muted dark:bg-slate-800 hover:bg-portfolio-primary hover:text-white p-3 rounded-lg transition-all duration-300"
@@ -193,26 +193,13 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="font-medium">LinkedIn</p>
-                      <p className="text-xs text-gray-500">kammarianand</p>
+                      <p className="text-xs text-gray-500">girigalla-prathyusha</p>
                     </div>
                   </a>
 
-                  <a
-                    href="https://codepen.io/MR-BAD-BOY"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center bg-portfolio-muted dark:bg-slate-800 hover:bg-portfolio-primary hover:text-white p-3 rounded-lg transition-all duration-300"
-                  >
-                    <div className="bg-purple-100 dark:bg-purple-900/20 p-2 rounded-full mr-3">
-                      <Github className="h-5 w-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <p className="font-medium">CodePen</p>
-                      <p className="text-xs text-gray-500">MR-BAD-BOY</p>
-                    </div>
-                  </a>
+              
                   <a 
-                  href="https://github.com/Anand0142" 
+                  href="https://github.com/GirigallaPrathyusha/" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center bg-portfolio-muted dark:bg-slate-800 hover:bg-portfolio-primary hover:text-white p-3 rounded-lg transition-all duration-300"
@@ -222,7 +209,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="font-medium">GitHub</p>
-                    <p className="text-xs text-gray-500">Anand0142</p>
+                    <p className="text-xs text-gray-500">GirigallaPrathyusha</p>
                   </div>
                 </a>
                 </div>

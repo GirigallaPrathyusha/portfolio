@@ -6,26 +6,26 @@ const experienceData = [
   {
     id: 1,
     type: "work",
-    title: "Software Development Engineer",
-    company: "BlueStock",
+    title: "web development",
+    company: "Prodigy Infoteck",
     location: "India",
-    date: "2024 DEC -2025 JAN",
-    description: "Creating a stock prices display website similar to screener.in using PHP for backend development. Building comprehensive stock market data visualization and company information platform."
+    date: "2024 OCT -2024 NOV",
+    description: " Gained  hands-on experience  in designing and optimizing  interactive web applications  , focusing on seamless functionality and performance. "
   },
   {
     id: 2,
     type: "education",
-    title: "B.Tech in Data Science",
+    title: "B.Tech in Information Technology",
     company: "B.V RAJU INSTITUTE OF TECHNOLOGY",
     location: "India",
     date: "2023 - 2026",
-    description: "Currently pursuing B.Tech in Data Science, focusing on advanced data analysis, android development, and software development."
+    description: "Currently pursuing B.Tech in Information Technology , focusing on web development and android develpoment."
   },
   {
     id: 3,
     type: "education",
-    title: "Diploma in Computer Science Engineering",
-    company: "MAHAVEER INSTITUTE OF SCIENCE & TECHNOLOGY",
+    title: "Diploma in Government Polytechnic for Women",
+    company: "Medak",
     location: "India",
     date: "2020 - 2023",
     description: "Completed diploma in Computer Science Engineering, gaining strong foundation in programming and software development."
@@ -34,7 +34,7 @@ const experienceData = [
     id: 4,
     type: "education",
     title: "High School",
-    company: "ZPHS MADHURAPUR",
+    company: "ZPHS Chinnaghanpur",
     location: "India",
     date: "2020",
     description: "Completed high school education with 100% academic performance, demonstrating excellence in studies and strong foundation for higher education."
@@ -93,7 +93,7 @@ const Experience = () => {
         
         <AnimatedContent>
           <div className="text-center mt-16">
-            <a href="https://drive.google.com/file/d/1QmYbmppJJh5MYp07n5Lrf9pFxI_xMyoF/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="button-outline">
+            <a href="https://docs.google.com/document/d/1aiOTnTiOVcBfq2CBAuY1-v1lPVYq5os0gi96G5wC6lw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer" className="button-outline">
               Download Resume
             </a>
           </div>

@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center">
           <a href="#home" className="text-2xl font-bold text-portfolio-heading mb-6">
-            KAMMARI<span className="text-portfolio-primary">.</span>
+            Girigalla<span className="text-portfolio-primary">.</span>
           </a>
           
           <div className="flex space-x-6 mb-8">
@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
           
           <p className="text-portfolio-text text-center text-sm mb-8">
-            &copy; {new Date().getFullYear()} KAMMARI ANAND. All rights reserved.
+            &copy; {new Date().getFullYear()} Girigalla Prathyusha. All rights reserved.
           </p>
           
           <button 

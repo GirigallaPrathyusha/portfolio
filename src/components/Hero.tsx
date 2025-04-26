@@ -10,7 +10,7 @@ const HomeHero = () => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
-  const [profession, setProfession] = useState("APP DEVELOPER");
+  const [profession, setProfession] = useState("Web DEVELOPER");
 
   useEffect(() => {
     if (isTyping && currentIndex < profession.length) {
@@ -32,7 +32,7 @@ const HomeHero = () => {
       }, 50);
       return () => clearTimeout(timeout);
     } else if (!isTyping && displayText.length === 0) {
-      setProfession(prev => prev === 'APP DEVELOPER' ? 'WEB DEVELOPER' : 'APP DEVELOPER');
+      setProfession(prev => prev === 'Web DEVELOPER' ? 'WEB DEVELOPER' : 'Web DEVELOPER');
       setCurrentIndex(0);
       setIsTyping(true);
     }
@@ -46,7 +46,7 @@ const HomeHero = () => {
             <h1 className="text-3xl md:text-5xl font-bold mb-4 font-montserrat leading-tight text-white">
               Hello, I'm{' '}
               <span className="bg-gradient-to-r from-[#4EDBE0] to-[#B945EE] text-transparent bg-clip-text">
-                KAMMARI ANAND
+                Girigalla Prathyusha
               </span>
             </h1>
             <h2 className="text-xl md:text-2xl mb-6 text-portfolio-secondary font-medium flex">

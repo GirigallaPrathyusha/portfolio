@@ -289,13 +289,12 @@ const AboutSection = () => {
           <AnimatedContent>
             <div className="flex flex-col justify-center appear-animated appear-animated-delay-1">
               <h3 className="text-2xl font-bold mb-4 font-montserrat">
-                <span className="bg-gradient-to-r from-[#4EDBE0] to-[#B945EE] text-transparent bg-clip-text">Hello</span>, I'm <span className="text-gradient">Anand</span>
+                <span className="bg-gradient-to-r from-[#4EDBE0] to-[#B945EE] text-transparent bg-clip-text">Hello</span>, I'm <span className="text-gradient">Prathyusha</span>
               </h3>
               <p className="mb-4 text-white-700 dark:text-gray-300">
-                I'm a Data Science student with a keen interest in Programming, Web & App Development. 
-                I'm seeking an innovative and challenging environment where I can apply my skills effectively, 
-                grow with evolving technologies, and turn challenges into opportunities while contributing to 
-                meaningful success.
+              I am a B.Tech student in Information Technology at BVRIT. I am
+              eager to apply my knowledge to real-world challenges and contribute
+              to innovative tech projects.
               </p>
               <p className="mb-6 text-white-700 dark:text-gray-300">
                 I believe in writing clean, maintainable code and creating intuitive user experiences.
@@ -316,8 +315,8 @@ const AboutSection = () => {
             >
               <img 
                 id="profile-img"
-                src="https://res.cloudinary.com/dy30cw1k4/image/upload/v1745565701/formal_hkxlji.jpg" 
-                alt="KAMMARI ANAND" 
+                src="https://res.cloudinary.com/dlled6nof/image/upload/v1745659450/prathyusha_ve4m15.jpg" 
+                alt="Girigalla Prathyusha" 
                 className="w-full h-full object-cover transition-transform duration-500"
               />
               

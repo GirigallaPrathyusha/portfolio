@@ -65,7 +65,7 @@ const Navbar = () => {
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-portfolio-dark/95 backdrop-blur-sm py-3 shadow-md' : 'py-5'}`}>
       <nav className="container mx-auto px-6 flex justify-between items-center">
         <a href="#home" className="text-2xl font-bold text-portfolio-heading">
-          KAMMARI<span className="text-portfolio-primary">.</span>
+          Girigalla<span className="text-portfolio-primary">.</span>
         </a>
 
         {/* Desktop Navigation */}

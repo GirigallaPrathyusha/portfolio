@@ -92,7 +92,7 @@ const WelcomeAnimation = () => {
                 <h1 
                   className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#4BE2E7] to-[#D931E2] font-montserrat tracking-wider"
                 >
-                  KAMMARI ANAND
+                  Girigalla Prathyusha
                 </h1>
               </div>
             )}
