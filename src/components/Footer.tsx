@@ -1,5 +1,6 @@
 
 import { ArrowUp, Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import AnimatedContent from './AnimatedContent'; 
 
 const Footer = () => {
   const scrollToTop = () => {

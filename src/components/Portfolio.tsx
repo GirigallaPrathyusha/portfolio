@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Code, Database, Globe } from 'lucide-react';
+import { motion, useAnimation, useInView } from 'framer-motion';
+import AnimatedContent from './AnimatedContent'; 
 
 const ProjectsSection = () => {
   const [activeTab, setActiveTab] = useState('projects');
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [controls, isInView]);
 
   const projects = [
     {
@@ -34,7 +45,8 @@ const ProjectsSection = () => {
       description: 'A versatile mobile application with features like notifications, chatbots and interactive interface showcasing multiple apps built to enhance user engagement and seamless experiences.',
       image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3',
       tags: ['React', 'React Native', 'Expo', 'JavaScript'],
-      category: 'App Development'
+      category: 'App Development',
+      icon: <Code size={20} className="mr-2" />
     }
   ];
 
@@ -54,10 +66,21 @@ const ProjectsSection = () => {
     { name: 'Firebase', icon: 'https://cdn.iconscout.com/icon/free/png-256/free-firebase-3521427-2944871.png' }
   ];
 
+  const duplicatedSkills = [...skills, ...skills];
+
   return (
-    <section id="portfolio" className="py-16 bg-portfolio-dark">
+    <section id="portfolio" className="py-16 bg-portfolio-dark" ref={ref}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 appear-animated">
+        <motion.div 
+          className="text-center mb-12"
+          initial="hidden"
+          animate={controls}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-3 font-montserrat">
             My <span className="bg-gradient-to-r from-[#4EDBE0] to-[#B945EE] text-transparent bg-clip-text">Tech Odyssey</span>
           </h2>
@@ -65,9 +88,18 @@ const ProjectsSection = () => {
           <p className="max-w-2xl mx-auto text-lg text-white-700 dark:text-gray-300">
             Unveiling my journey of innovation through projects and skills each step showcases my growth, learning, and creativity.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="flex justify-center mb-12">
+        <motion.div 
+          className="flex justify-center mb-12"
+          initial="hidden"
+          animate={controls}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 }
+          }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
           <button 
             onClick={() => setActiveTab('projects')}
             className={`flex items-center px-8 py-3 rounded-l-lg transition-all ${
@@ -88,29 +120,49 @@ const ProjectsSection = () => {
           >
             <Database size={20} className="mr-2" /> Skill Spectrum
           </button>
-        </div>
+        </motion.div>
 
         {activeTab === 'projects' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            initial="hidden"
+            animate={controls}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { 
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+          >
             {projects.map((project, index) => (
-              <div 
+              <motion.div 
                 key={index}
-                className="project-card appear-animated"
-                style={{ animationDelay: `${0.2 * (index + 1)}s` }}
+                className="project-card group relative overflow-hidden rounded-xl shadow-xl border border-gray-800 hover:border-[#B945EE]/50 transition-all duration-500"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
               >
-                <div className="overflow-hidden h-48">
+                <div className="overflow-hidden h-48 relative">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center text-sm text-portfolio-primary dark:text-portfolio-accent mb-2">
-                    {project.icon}
-                    <span>{project.category}</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <div className="flex items-center text-sm text-white mb-2">
+                        {project.icon}
+                        <span>{project.category}</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
+                </div>
+                <div className="p-6 bg-[#0f172a]">
                   <p className="text-gray-400 mb-4 text-sm line-clamp-3">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, i) => (
@@ -123,40 +175,70 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
 
         {activeTab === 'skills' && (
-          <div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 appear-animated appear-animated-delay-2">
-              {skills.map((skill, index) => (
-                <div 
-                  key={index} 
-                  className="flex flex-col items-center p-6 rounded-lg shadow-lg transition-all duration-500 cursor-pointer relative overflow-hidden group"
-                  style={{
-                    background: 'linear-gradient(45deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7))'
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#4EDBE0]/10 to-[#B945EE]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute inset-0 bg-portfolio-dark/50 group-hover:bg-portfolio-dark/30 transition-colors duration-500" />
-                  <div className="relative z-10 w-16 h-16 mb-3 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                    <img 
-                      src={skill.icon} 
-                      alt={skill.name} 
-                      className="max-w-full max-h-full object-contain filter brightness-100 group-hover:brightness-110" 
-                    />
-                  </div>
-                  <h4 className="relative z-10 font-medium text-gray-300 group-hover:text-white transition-colors duration-300">
-                    {skill.name}
-                  </h4>
-                </div>
-              ))}
+          <div className="relative overflow-hidden py-8">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-[#B945EE] to-transparent opacity-20"></div>
+            </div>
+            
+            <div className="relative">
+              <div className="flex animate-infinite-scroll items-center justify-center md:justify-start gap-8 py-8">
+                {duplicatedSkills.map((skill, index) => (
+                  <motion.div 
+                    key={`${skill.name}-${index}`}
+                    className="flex flex-col items-center p-6 rounded-xl shadow-lg transition-all duration-500 cursor-pointer relative overflow-hidden group min-w-[150px]"
+                    style={{
+                      background: 'linear-gradient(45deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7))',
+                      backdropFilter: 'blur(4px)'
+                    }}
+                    whileHover={{ 
+                      scale: 1.05,
+                      boxShadow: '0 10px 25px -5px rgba(185, 69, 238, 0.4)'
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#4EDBE0]/10 to-[#B945EE]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative z-10 w-16 h-16 mb-3 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                      <img 
+                        src={skill.icon} 
+                        alt={skill.name} 
+                        className="max-w-full max-h-full object-contain filter brightness-100 group-hover:brightness-110" 
+                      />
+                    </div>
+                    <h4 className="relative z-10 font-medium text-gray-300 group-hover:text-white transition-colors duration-300">
+                      {skill.name}
+                    </h4>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         )}
       </div>
+
+      <style>
+        {`
+          .animate-infinite-scroll {
+            display: flex;
+            width: fit-content;
+            animation: scroll 20s linear infinite;
+          }
+
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(calc(-50% - 1rem));
+            }
+          }
+        `}
+      </style>
+
     </section>
   );
 };

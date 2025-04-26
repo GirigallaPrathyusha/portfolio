@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Lottie from 'lottie-react';
-
+import AnimatedContent from './AnimatedContent'; 
 // ✅ Import your local Lottie JSON file
 import animationData from '../assets/coding-animation.json';
 

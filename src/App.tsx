@@ -14,6 +14,9 @@ import NotFound from "./pages/NotFound";
 
 import "./styles/transitions.css";
 
+import SplashCursor from './components/SplashCursor'; // Update the import path
+import AnimatedContent from './components/AnimatedContent'; // Ensure this import is present
+
 const queryClient = new QueryClient();
 
 const ScrollToSection = () => {
@@ -124,17 +127,35 @@ const PageTransition = () => {
   );
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToSection />
-        <PageTransition />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+function AppContent() {
+  const location = useLocation();
 
-export default App;
+  return (
+    <>
+      <ScrollToSection />
+      <TransitionGroup>
+        <CSSTransition key={location.key} timeout={300} classNames="fade">
+          <Routes location={location}>
+            <Route path="/" element={<Index />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <AppContent />
+          <Toaster />
+          <Sonner />
+          <SplashCursor />
+        </TooltipProvider>
+      </QueryClientProvider>
+    </BrowserRouter>
+  );
+}
